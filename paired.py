@@ -19,19 +19,19 @@ class DraftDrawer(BaseModel):
         self.opt_model = 'draftdrawer'
 
         # Reference encoder is fixed.
-        self.G = init_net(DeepResidualNetwork(1, 3), gpus=self.gpus)
+        self.G = init_net(DeepResidualNetwork(self.opt.chA, self.opt.chB), gpus=self.gpus)
 
         if not self.opt.eval:
-            self.F = init_net(DeepResidualNetwork(3, 1, True), gpus=self.gpus)
+            self.F = init_net(DeepResidualNetwork(self.opt.chB, self.opt.chA, True), gpus=self.gpus)
             self.Dg = define_D(
-                input_channels = self.opt.chA,
+                input_channels = self.opt.chB,
                 n_layers = self.opt.n_layer,
                 ndf = self.opt.ndf,
                 spec_norm = self.opt.use_spec,
                 gpus = self.gpus
             )
             self.Df = define_D(
-                input_channels = self.opt.chB,
+                input_channels = self.opt.chA,
                 n_layers = self.opt.n_layer,
                 ndf = self.opt.ndf,
                 spec_norm = self.opt.use_spec,

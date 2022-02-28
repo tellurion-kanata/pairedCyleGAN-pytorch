@@ -13,11 +13,11 @@ class Options():
                             help='Training dataset')
         parser.add_argument('--gpus', type=str, default='0',
                             help='gpu ids:  e.g. 0 | 0,1 | 0,2 | -1 for cpu')
-        parser.add_argument('--batch_size', '-bs', default=32, type=int,
+        parser.add_argument('--batch_size', '-bs', default=16, type=int,
                             help='Number of batch size')
         parser.add_argument('--load_epoch', '-le', type=str, default='latest',
                             help='Epoch to load. Default is \'latest\'')
-        parser.add_argument('--load_size', type=int, default=384,
+        parser.add_argument('--load_size', type=int, default=256,
                             help='Loaded size of image')
         parser.add_argument('--num_threads', '-nt', type=int, default=0,
                             help='Number of threads when reading data')
@@ -27,9 +27,9 @@ class Options():
                             help='Trained models save path')
         parser.add_argument('--no_shuffle', action='store_true',
                             help='Not to shuffle data every epoch')
-        parser.add_argument('--chA', type=int, default=3,
+        parser.add_argument('--chA', type=int, default=1,
                             help='Channels of real A image')
-        parser.add_argument('--chB', type=int, default=1,
+        parser.add_argument('--chB', type=int, default=3,
                             help='Channels of real B image')
         return parser
 
