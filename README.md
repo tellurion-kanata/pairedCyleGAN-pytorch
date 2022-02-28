@@ -9,7 +9,7 @@ Please organize your training/testing dataset like:
 
 Or you can change the dataset code (in datasets/dataset.py) to fit your training dataset.  
 
-$\mathcal{L}_{p}(G,D_{s})$ introduced in the paper is not adopted and implemented according to my task.
+![](http://latex.codecogs.com/svg.latex?\mathcal{L}_{p}(G,D_{s})) introduced in the paper is not adopted and implemented according to my task.
 
 Basic training command:
 ```
